@@ -18,7 +18,7 @@ try {
 
 
 
-   // echo "<p style='color: green'>connected </p>";
+    echo "<p style='color: green'>connected </p>";
     $db->beginTransaction(); // начало транзакции
 
     $sql = "SELECT * FROM post ORDER BY published_date DESC";
