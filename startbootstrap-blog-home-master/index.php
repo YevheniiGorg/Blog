@@ -9,9 +9,14 @@ if(isset($_GET['page'])){
 
 try {
     // Подключение к б/д
-    $dsn = "mysql:host=localhost;dbname=blog";
-    $db = new PDO($dsn, 'root');
+    //$dsn = "mysql:host=localhost;dbname=blog";
+   // $db = new PDO($dsn, 'root');
+   // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $db = new PDO("sqlsrv:server = tcp:kucherin.database.windows.net,1433; Database = kucherinblog", "adminblog", "{your_password_here}");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
 
    // echo "<p style='color: green'>connected </p>";
     $db->beginTransaction(); // начало транзакции
