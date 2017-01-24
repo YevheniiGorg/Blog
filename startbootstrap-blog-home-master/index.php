@@ -12,15 +12,16 @@ try {
     //$dsn = "mysql:host=localhost;dbname=blog";
    // $db = new PDO($dsn, 'root');
    // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $db = new PDO("sqlsrv:server = tcp:kucherin.database.windows.net,1433,dbname=dbblog; Database = kucherinblog", "adminblog", "tel_3637842");
+//1433
+    $db = new PDO("sqlsrv:server = tcp:kucherin.database.windows.net,dbname=dbblog; Database = kucherinblog", "adminblog", "tel_3637842");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
 
-    echo "<p style='color: green'>connected </p>";
+
     $db->beginTransaction(); // начало транзакции
 
+    echo "<p style='color: green'>connected </p>";
 
 
     $sql = "SELECT * FROM post ORDER BY published_date DESC";
