@@ -13,8 +13,8 @@ try {
    // $db = new PDO($dsn, 'root');
    // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    //$db = new PDO("sqlsrv:server = tcp:kucherin.database.windows.net,1433; Database = kucherinblog", "adminblog", "tel_3637842");
-    $db = new PDO("sqlsrv:server = tcp:kucherin.database.windows.net,1433; Database = dbblog");
+    $db = new PDO("sqlsrv:server = tcp:kucherin.database.windows.net,1433; Database = kucherinblog", "adminblog", "tel_3637842");
+    //$db = new PDO("sqlsrv:server = tcp:kucherin.database.windows.net,1433; Database = dbblog");
 
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
