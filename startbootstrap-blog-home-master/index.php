@@ -18,7 +18,7 @@ try {
 
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-
+    $db->exec("CREATE TABLE post (id int PRIMARY KEY NOT NULL, name varchar(25) NOT NULL)");
 
     print_r($db);
     $db->beginTransaction(); // начало транзакции
