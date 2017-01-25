@@ -21,9 +21,12 @@ try {
 
     $db->beginTransaction(); // начало транзакции
 
-   
 
+    $db->exec("USE dbblog");
+    $db->commit();
     echo "<p style='color: green'>connected </p>";
+
+
 
 
     $sql = "SELECT * FROM post ORDER BY published_date DESC";
