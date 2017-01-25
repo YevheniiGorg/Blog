@@ -13,12 +13,11 @@ try {
    // $db = new PDO($dsn, 'root');
    // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $db = new PDO("sqlsrv:server = tcp:kucherin.database.windows.net,1433; Database = kucherinblog", "adminblog", "tel_3637842");
+    $db = new PDO("sqlsrv:server = tcp:kucherin.database.windows.net,1433; Database = kucherinblog;dbname=blog", "adminblog", "tel_3637842");
     //$db = new PDO("sqlsrv:server = tcp:kucherin.database.windows.net,1433; Database = dbblog");
 
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $db->exec("CREATE TABLE post (id int PRIMARY KEY NOT NULL, name varchar(25) NOT NULL)");
 
     print_r($db);
     $db->beginTransaction(); // начало транзакции
