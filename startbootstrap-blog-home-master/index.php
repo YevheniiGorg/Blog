@@ -25,7 +25,7 @@ try {
 
     echo "<p style='color: green'>connected </p>";
 
-    $db->exec("CREATE TABLE post;");
+    $db->exec("CREATE TABLE post");
 
     $sql = "SELECT * FROM post ORDER BY published_date DESC";
     $pst = $db->prepare($sql);
