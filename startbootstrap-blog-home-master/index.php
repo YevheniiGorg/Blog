@@ -21,7 +21,7 @@ try {
     //$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-    echo "<p style='color: green'>connected </p>";
+    //echo "<p style='color: green'>connected </p>";
 
 //       $sql = "CREATE TABLE post (
 //              id integer PRIMARY KEY AUTOINCREMENT,
