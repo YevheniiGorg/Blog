@@ -10,21 +10,43 @@ if(isset($_GET['page'])){
 try {
     // Подключение к б/д
     //$dsn = "mysql:host=localhost;dbname=blog";
-   // $db = new PDO($dsn, 'root');
-   // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $db = new PDO("sqlsrv:server = tcp:kucherin.database.windows.net,1433; Database = kucherinblog;dbname=blog", "adminblog", "tel_3637842");
-    //$db = new PDO("sqlsrv:server = tcp:kucherin.database.windows.net,1433; Database = dbblog");
-
+    $dsn = "sqlite:../blog.sqlite";
+    $db = new PDO($dsn, 'root');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+    //$db = new PDO("sqlsrv:server = tcp:kucherin.database.windows.net,1433; Database = kucherinblog;dbname=blog", "adminblog", "tel_3637842");
+    //$db = new PDO("sqlsrv:server = tcp:kucherin.database.windows.net,1433; Database = dbblog");
 
-    print_r($db);
-    $db->beginTransaction(); // начало транзакции
+
+    //$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 
     echo "<p style='color: green'>connected </p>";
 
-    $db->exec("CREATE TABLE post");
+//       $sql = "CREATE TABLE post (
+//              id integer PRIMARY KEY AUTOINCREMENT,
+//              title VARCHAR(256) NOT NULL,
+//              content TEXT NOT NULL,
+//              published_date TEXT NOT NULL,
+//              published_photo VARCHAR(64)
+//            )";
+//
+//    $db->exec($sql);
+//
+//    $sql = "CREATE TABLE comments (
+//              id integer PRIMARY KEY AUTOINCREMENT,
+//              nameuser VARCHAR(64) NOT NULL,
+//              comment_time TEXT NOT NULL,
+//              content TEXT NOT NULL,
+//              postID integer,
+//              FOREIGN KEY(postID) REFERENCES post(id)
+//            )";
+//
+//    $db->exec($sql);
+
+
+    $db->beginTransaction(); // начало транзакции
+
 
     $sql = "SELECT * FROM post ORDER BY published_date DESC";
     $pst = $db->prepare($sql);
